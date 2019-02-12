@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+  <title>iTube</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+  <!-- Header -->
+  <header id="header">
+    <a href="index.html" class="title">Luis H. Ball Jr.</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about_me.html" class="active">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Main -->
+    <section id="main" class="wrapper">
+      <div class="inner">
+        <h1 class="major" id="welcome-to-askcarl">Welcome to askCarl</h1>
+        <p>Hi! This is the README for <strong>askCarl</strong>. askCarl is a Javascript app that displays complex Javascrpipt
+          &amp; CSS concepts as simple animations. The goal is to display how the two languages can be used to achieve some of
+          the most tried and true animation techniques on one&#39;s webpage.</p>
+        <p>Although traditionally animation techniques were meant for film animators, these tested strategies translate well to
+          uesr&#39;s expectations of webpage componenet behavior. Scroll bouncing, gesture navigation, scroll-to-zoom being some
+          prime examples.</p>
+        <p>The list of askCarl&#39;s animation is heavily inspired by the video <strong>The Illusion of Life</strong> <a
+            href="https://vimeo.com/93206523">vimeo</a></p>
+        <h1 id="functionalities">Functionalities</h1>
+        <p>askCarl stores your files in your browser, which means all your files are automatically saved locally. askCarl is
+          written in Javascript and HTML.</p>
+        <h2 id="search">Search</h2>
+        <p>Type your CSS selector or question in the <strong>Search</strong> field, and Carl will fetch the most relevant
+          results. You can select the one that most suits your needs.</p>
+        <h1 id="libraries-technologies">Libraries &amp; technologies</h1>
+        <p><strong>askCarl</strong> makes use of:</p>
+        <ul>
+          <li>Vanilla Javascript for animation&#39;s logic</li>
+          <li>HTML 5 for convas rendering</li>
+          <li>NodeJS for dabaasse management</li>
+        </ul>
+        <p><strong>Main Files</strong></p>
+        <ul>
+          <li><code>home.js</code> main structure of the canvas and webpage</li>
+          <li><code>token.js</code> class object that animations interact with (e.g. a square canvas element with speed, acc,
+            size, etc., attributes)</li>
+          <li><code>animations.js</code> stores all the animation logic<ul>
+              <li><code>squash.js</code> animation logic for squash</li>
+              <li><code>anticipation.js</code> animation file</li>
+              <li><code>staging.js</code> animation file</li>
+              <li><code>pose.js</code> animation file</li>
+            </ul>
+          </li>
+          <li><code>physics.js</code> stores all the physiscs logic<ul>
+              <li><code>moveBy.js</code> logic for moving in x, y, z coordinates</li>
+              <li><code>transformTo.js</code> logic for changing shape in x, y, z directions</li>
+              <li><code>acceleration.js</code> logic for movement speed</li>
+              <li><code>collision.js</code> logic for detecting edges of the canvas</li>
+            </ul>
+          </li>
+          <li><code>search.js</code> stores the search functionality logic</li>
+        </ul>
+        <h2 id="db-schema">DB Schema</h2>
+        <p>SmartyPants converts ASCII punctuation characters into &quot;smart&quot; typographic punctuation HTML entities. For
+          example:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Column Name</th>
+              <th>Data Type</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>topicTags</td>
+              <td><code>&#39;string&#39;</code></td>
+              <td>Title of topic covered</td>
+            </tr>
+            <tr>
+              <td>cssTopic</td>
+              <td><code>&#39;string&#39;</code></td>
+              <td>Title of topic covered</td>
+            </tr>
+          </tbody>
+        </table>
+        <h1 id="mvp-features">MVP Features</h1>
+        <ul>
+          <li>[ ] 4 CSS animations</li>
+          <li>[ ] Each animation restarts after a given period</li>
+          <li>[ ] Animations only load when scrolled to</li>
+          <li>[ ] Code for each animation can be displayed</li>
+        </ul>
+        <p><strong>Reach Features</strong></p>
+        <ul>
+          <li>[ ] Animations can be searched for</li>
+          <li>[ ] Animations are interactive</li>
+          <li>[ ] Animations can be altered by changing displayed code</li>
+          <li>[ ] Animation speed can be controlled by user</li>
+        </ul>
+        <h1 id="architecture">Architecture</h1>
+        <p>askCarl is a single-page app that loads a CSS animation as the users scrolls. After each animation loads, dsiplays,
+          and ends, it atuomatically restarts after a small period of time. Some of the animations can be intearcted with by the
+          user. </p>
+        <p>The user can browse askCarl by simply scrolling up or down the page, or, when applicable, cliking and scrolling
+          inside the animation canvas.</p>
+        <h1 id="implementation-timeline">Implementation timeline</h1>
+        <p>2/06/19 </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Functionality</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2/06/19</td>
+              <td>Setup</td>
+              <td>Style and populate home page with at least one canvas placeholder</td>
+            </tr>
+            <tr>
+              <td>2/07/19</td>
+              <td>Squash and stretch</td>
+              <td>Give the illusion of gravity, weight, mass and flexibility to element</td>
+            </tr>
+            <tr>
+              <td>2/08/19</td>
+              <td>Anticipation</td>
+              <td>Give the illusion of predictable motion to element</td>
+            </tr>
+            <tr>
+              <td>2/09/19</td>
+              <td>Staging</td>
+              <td>Guide the users&#39;s eye and draw attention to element in focus</td>
+            </tr>
+            <tr>
+              <td>2/10/19</td>
+              <td>Pose to pose</td>
+              <td>Use pose-2-pose to give illusion of shape change to element</td>
+            </tr>
+            <tr>
+              <td>2/11/19</td>
+              <td>Tags</td>
+              <td>Add tags to all animations</td>
+            </tr>
+            <tr>
+              <td>2/12/19</td>
+              <td>Search</td>
+              <td>Make tags searchable</td>
+            </tr>
+            <tr>
+              <td>2/13/19</td>
+              <td>Details</td>
+              <td>Add links to GitHub, linkedIn, etc</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer" class="wrapper alt">
+    <div class="inner">
+      <ul class="menu">
+        <li>&copy; LuisHBallJr. All rights reserved.</li>
+        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

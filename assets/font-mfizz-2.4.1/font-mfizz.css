@@ -332,7 +332,8 @@
     color: #1DB954;
     text-align: center;
     line-height: 2.5em;
-    margin: 0 0 1.3em 80px;
+    /* margin: 0 0 1.3em 80px; */
+    margin: 30px 0 1.3em 90px;
     position: absolute;
     left: 3em;
     top: 3em;
@@ -348,7 +349,8 @@
     color: #1DB954;
     text-align: center;
     line-height: 2.5em;
-    margin: 0 0 1.3em 80px;
+    /* margin: 0 0 1.3em 80px; */
+    margin: 30px 0 1.3em 90px;
     position: absolute;
     font-size: large;
     left: 3em;
@@ -364,7 +366,8 @@
     color: #1DB954;
     text-align: center;
     line-height: 2.5em;
-    margin: 0 0 1.3em 80px;    
+    /* margin: 0 0 1.3em 80px;     */
+    margin: 30px 0 1.3em 90px;
     position: absolute;
     font-size: large;
     left: 3em;
@@ -380,7 +383,8 @@
     color: #1DB954;
     text-align: center;
     line-height: 2.5em;
-    margin: 0 0 1.3em 80px;    
+    /* margin: 0 0 1.3em 80px;     */
+    margin: 30px 0 1.3em 90px;
     position: absolute;
     font-size: large;
     left: 3em;
@@ -395,7 +399,8 @@
     color: #1DB954;
     text-align: center;
     line-height: 2.5em;
-    margin: 0 0 1.3em 80px;    
+    /* margin: 0 0 1.3em 80px;     */
+    margin: 30px 0 1.3em 90px;
     position: absolute;
     font-size: large;
     left: 3em;
@@ -411,7 +416,8 @@
     color: #1DB954;
     text-align: center;
     line-height: 2.5em;
-    margin: 0 0 1.3em 80px;    
+    /* margin: 0 0 1.3em 80px;     */
+    margin: 30px 0 1.3em 90px;
     position: absolute;
     font-size: large;
     left: 3em;

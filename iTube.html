@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+  <title>iTube</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+  <!-- Header -->
+  <header id="header">
+    <a href="index.html" class="title">Luis H. Ball Jr.</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about_me.html" class="active">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Wrapper -->
+  <div id="wrapper">
+
+    <!-- Main -->
+    <section id="main" class="wrapper">
+      <div class="inner">
+        <h1 class="major" id="fullstack-project">
+          iTube:  Fullstack Project
+        </h1>
+        <h5>
+          <a class="button primary" href="#">Live Site</a>
+          <a class="button" href="https://github.com/luqven/iTube">Github</a>
+        </h5>
+        <br>
+        <p>Hi! This is the README for <strong>iTube</strong>. iTube is a React-Redux app that allows users to share videos with
+          one another. The goal of this app is to display the power of the React-Redux cycle using AWS S3 APIs for video
+          hosting, and a Rails backend for database management.</p>
+        <h1 id="functionalities">Functionalities</h1>
+        <p>iTube allows users to upload, view, like, and comment on videos. User&#39;s videos get added to their channels, and
+          channels can have many subscribed users. The user can view his channel and his subscribed channels.</p>
+        <p>iTube stores files on the web, so take appropriate precautions, as files will live on the AWS server until the
+          database is resseded.</p>
+        <h2 id="search">Search</h2>
+        <p>Type the video title or topic you have in mind in the <strong>Search</strong> field, and iTube will fetch the most
+          relevant results. You can select the one that most suits your needs.</p>
+        <h1 id="libraries-technologies">Libraries &amp; technologies</h1>
+        <p><strong>iTube</strong> makes use of:</p>
+        <ul>
+          <li>React for componenet creation</li>
+          <li>Redux for state management</li>
+          <li>NodeJs for NPM packages like WebPack</li>
+          <li>Rails for dabaasse management</li>
+          <li>HTML 5 for convas rendering</li>
+          <li>CSS</li>
+        </ul>
+        <p><strong>Main Components</strong></p>
+        <ul>
+          <li><code>root.jsx</code> Component that wraps the rest in the Provider and HashRouter.</li>
+          <li><code>app.jsx</code> Component that provied the store the rest of the components, manages Redirect logic.</li>
+          <li><code>home.js</code> Home page component</li>
+          <li>
+            <p><code>Videos</code></p>
+            <ul>
+              <li><code>video_form_container.jsx</code> container for the edit and upload video forms.</li>
+              <li><code>video_edit_container.jsx</code> container for the edit form.</li>
+              <li><code>video_upload_container.jsx</code> container for the upload form.</li>
+              <li><code>video_preview_container.jsx</code> container for the video preview componenet</li>
+              <li><code>video_show_container.jsx</code> container for the video show componenet</li>
+              <li><code>video_form.jsx</code> form for editing &amp; uploading videos</li>
+              <li><code>video_preview.jsx</code> component that render preview image, title, and more for an individual video.
+              </li>
+              <li><code>video_show.jsx</code> component that render video file, description, title, likes, and comments.</li>
+            </ul>
+            <p>Other notable components:</p>
+          </li>
+          <li><code>channel.jsx</code> Channel component that renders <code>VideoPreview</code> components for each video in
+            channel&#39;s slice of state.</li>
+          <li><code>like_button.jsx</code> Component that renders a like button that on click adds likes to the backend.
+            Displays a video&#39;s number of total likes.</li>
+          <li><code>nav_bar.jsx</code> Component that renders <code>modal.jsx</code> and <code>dropdown.jsx</code>.</li>
+        </ul>
+        <h1 id="mvp-features">MVP Features</h1>
+        <p>Features to be completed, in order of planned implementation:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Description</th>
+              <th>Target Completion Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hosting on Heroku</td>
+              <td>Project files living on Heroku</td>
+              <td>01 / 22 / 2019</td>
+            </tr>
+            <tr>
+              <td>User Profiles</td>
+              <td>Users login, have a show page</td>
+              <td>01 / 25 / 2019</td>
+            </tr>
+            <tr>
+              <td>Video</td>
+              <td>Video upload and playback</td>
+              <td>01 / 27 / 2019</td>
+            </tr>
+            <tr>
+              <td>Likes</td>
+              <td>Likes for videos</td>
+              <td>01 / 28 / 2019</td>
+            </tr>
+            <tr>
+              <td>Comments</td>
+              <td>Leaving comments on video page</td>
+              <td>01 / 30 / 2019</td>
+            </tr>
+            <tr>
+              <td>Play-count</td>
+              <td>Videos display their stats</td>
+              <td>01 / 31 / 2019</td>
+            </tr>
+            <tr>
+              <td>Channels</td>
+              <td>Videos live in channels</td>
+              <td>02 / 01 / 2019</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer" class="wrapper alt">
+    <div class="inner">
+      <ul class="menu">
+        <li>&copy; LuisHBallJr. All rights reserved.</li>
+        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -39,6 +39,7 @@
 				left: 3em;
 				top: 3em;
 				opacity: 1;
+				
 			}
 
 			@for $i from 1 through _misc(max-features) {
