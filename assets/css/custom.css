@@ -266,3 +266,7 @@
 #project-card-2 {
   background: linear-gradient(135deg, #34a752 8%, #a6f72f 83%);
 }
+
+#back-text-react {
+  margin-top: -45px;
+}
