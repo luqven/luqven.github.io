@@ -4138,7 +4138,8 @@ input, select, textarea {
 }
 
 .card p {
-  font-size: small;
+	font-size: small;
+	font-weight: bold;
 }
 
 .card-head {
