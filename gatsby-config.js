@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Luis Ball - Software Engineer`,
+    title: `Luis Ball`,
     author: {
       name: `Luis Ball`,
-      summary: ` - Dad, Software Engineer, Pittsburgh Sports Fan`,
+      summary: `A Dad, Software Engineer, and Pittsburgh Sports Fan`,
     },
     description: `Luis H. Ball Jr: Dad, Software Engineer, Pittsburgh Sports Fan`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
