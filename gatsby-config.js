@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Luis Ball - Software Engineer`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Luis Ball`,
+      summary: ` - Dad, Software Engineer, Pittsburgh Sports Fan`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Luis H. Ball Jr: Dad, Software Engineer, Pittsburgh Sports Fan`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `luishbjr1`,
     },
   },
   plugins: [
