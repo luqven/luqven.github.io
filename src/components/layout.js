@@ -20,10 +20,21 @@ const Layout = ({ location, title, children }) => {
           style={{
             boxShadow: `none`,
             color: `inherit`,
+            marginRight: '50px',
           }}
           to={`/`}
         >
           {title}
+        </Link>
+        <Link
+          style={{
+            boxShadow: `none`,
+            color: `inherit`,
+            fontSize: 'large',
+          }}
+          to={`/blog-index`}
+        >
+          {'blog'}
         </Link>
       </h1>
     )
@@ -39,10 +50,21 @@ const Layout = ({ location, title, children }) => {
           style={{
             boxShadow: `none`,
             color: `inherit`,
+            marginRight: '50px',
           }}
           to={`/`}
         >
           {title}
+        </Link>
+        <Link
+          style={{
+            boxShadow: `none`,
+            color: `inherit`,
+            fontSize: 'large',
+          }}
+          to={`/blog-index`}
+        >
+          {'blog'}
         </Link>
       </h3>
     )
