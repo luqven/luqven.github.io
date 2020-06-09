@@ -53,7 +53,7 @@ const Layout = ({ location, title, children }) => {
           color: `inherit`,
           marginRight: '50px',
         }}
-        to={`/blog-index`}
+        to={`/`}
       >
         {"Luis Ball"}
       </Link>
@@ -63,9 +63,9 @@ const Layout = ({ location, title, children }) => {
           color: `inherit`,
           fontSize: 'large',
         }}
-        to={`/`}
+        to={`/blog-index`}
       >
-        {'Home'}
+        {'blog'}
       </Link>
     </h1>
   )}
