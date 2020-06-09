@@ -6,7 +6,7 @@ description: A little about Luis Ball
 
 <h2 style="font-size: 2rem ;border-bottom: none">Software Engineer</h2>
 
-Software developer. Pittsburgh sports fanatic 🏴‍☠️.
+Dad. Pittsburgh sports fanatic 🏴‍☠️.
 
 <div style="margin-bottom: 50px"></div>
 
