@@ -8,6 +8,15 @@ The goal is to recreate the [apple.com](www.apple.com) menubar. They do some fan
 
 ![safari-vs-firefox-blur-glass-menubar](https://i.imgur.com/f1bFaBu.png)
 
+As you can see in the image above, non-WebKit browsers like Firefox don't support the `backdrop-filter` CSS property as of right now. In order to achieve something like the cross-browser compatible example bellow, we therefore have to do some CSS and Js tricker.
+
+## Cross-browser compatible example
+
+<iframe height="399" style="width: 100%;" scrolling="no" title="YzwwzWV" src="https://codepen.io/luqven/embed/YzwwzWV?height=399&theme-id=dark&default-tab=css,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/luqven/pen/YzwwzWV'>YzwwzWV</a> by Luis Ball
+  (<a href='https://codepen.io/luqven'>@luqven</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
 ## Blurred-glass menu bar in WebKit Browsers
 
 Achieving this effect in a webkit browser is fairly simple. We just need to add a css class to the navigation bar with a `backdrop-filter` property:
@@ -133,3 +142,5 @@ In short, it's not pretty. In fact it can also significantly reduce the scrollin
 And if you're thinking, _"This sounds like we've essentially duplicated the steps outlined in the `backdrop-filter` specs"_, you're absolutely right. Unlike the spec, however, we can't _"Copy the Backdrop Root Image into a temporary buffer"_. We don't have access to that buffer, which is why we have to copy the actual HTML DOM elements in full, place them in a container, and then blur them all in unison by blurring the container.
 
 Thankfully, it looks like most modern browsers are embracing the webkit `backdrop-filter` css property. Chrome starting supporting it since version 81 and FireFox is said to be supporting it within the next major release or two.
+
+> Updated on 2020-06-09 | 17:52
