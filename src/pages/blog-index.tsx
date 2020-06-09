@@ -40,6 +40,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
+        if (node.fields.slug === "/intro/" || title === "About me") { return; }
         return (
           <article key={node.fields.slug}>
             <header>
