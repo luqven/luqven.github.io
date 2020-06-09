@@ -1,6 +1,6 @@
 ---
 title: How to make a cross-browser, blurred-glass menu bar
-date: "2015-05-01T22:12:03.284Z"
+date: "2020-06-08T07:00:25.999Z"
 description: "Recreating Apple's menubar in a non-webkit browser using CSS and JavaScript"
 ---
 
