@@ -13,6 +13,7 @@ const Container = styled.div`
     box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 15px;
     background: ${props => props.color ? props.color : 'white'};
     margin: 2rem 1rem;
+    margin-left: 0px;
     border-radius: 1rem;
     transition: all 0.3s ease-out 0s;
 

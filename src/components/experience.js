@@ -6,6 +6,7 @@ import Card from "../components/card"
 const CardText = styled.p`
     max-width: 200px;
     padding-top: 50px;
+    margin: 10px;
 `;
 
 const ExperienceBlock = styled.div`
@@ -17,6 +18,7 @@ const ExperienceBlock = styled.div`
 const CardContainer = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 `
 
 const Experience = ({ title, linkTo, body, imageAlt, imageUrl, cardBackground, left=false}) => {
