@@ -36,6 +36,7 @@ const HomePage = ({ data, location }: PageProps<Data>) => {
                 __html: aboutHtml,
               }}
             />
+          <br />
           <div className="social-icons" style={{display: 'flex', flexDirection: 'row'}}>
             <a href="https://github.com/luqven">
               <FaIcon icon={faGithub} size="2x" />
