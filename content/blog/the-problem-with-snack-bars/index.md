@@ -1,6 +1,6 @@
 ---
 title: The problem with snack bars for managing notifications
-date: "2020-06-10T16:32:58.820Z"
+date: "2020-06-09T19:07:26.184Z"
 description: "Snack bars are popular. But they obscure content in unexpected and annoying ways."
 ---
 
