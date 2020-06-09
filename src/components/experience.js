@@ -2,6 +2,7 @@ import React from 'react'
 import styled from "styled-components"
 
 import Card from "../components/card"
+import AnimatedShare from "../components/animated-share"
 
 const CardText = styled.p`
     max-width: 200px;
@@ -24,7 +25,12 @@ const CardContainer = styled.div`
 const Experience = ({ title, linkTo, body, imageAlt, imageUrl, cardBackground, left=false}) => {
     return (
         <ExperienceBlock>
-            <a href={linkTo}><h3>{title}</h3></a>
+            <a href={linkTo}><h3 style={{display: 'flex', flexDirection: 'row'}}>
+                {title}
+                <div style={{marginTop: '-15px'}}>
+                    <AnimatedShare />
+                </div>
+            </h3></a>
                 <CardContainer>
                     {left ? 
                     <Card pointer linkTo={linkTo} color={cardBackground}>
@@ -58,6 +64,7 @@ const WorkExperience  = () => {
                 body="Enhanced advertising tools that evaluate the quality of media by tracking user attention."
                 imageAlt="adelaide-tracker-portal"
                 imageUrl="https://i.imgur.com/Lrc5BaL.png"
+                left
             />
             <Experience
                 title="PanAm Post"

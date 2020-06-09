@@ -6,14 +6,7 @@ description: A little about Luis Ball
 
 <h2 style="font-size: 2rem ;border-bottom: none">Software Engineer</h2>
 
-### Versed in React, Rails, PostgreSQL, and so much more
-
-<br />
-
-- [LinkedIn 🔗](https://www.linkedin.com/in/luisballjr/)
-- [GitHub 🔗](https://github.com/luqven)
-- [Resume 📎](https://drive.google.com/file/d/1ENwQMcwDOktyqNsOCMdTMVHKt69JLOs0/view?usp=sharing)
-- [Contact me ✉️](mailto:luishballjr@gmail.com)
+Software developer. Pittsburgh sports fanatic 🏴‍☠️.
 
 <div style="margin-bottom: 50px"></div>
 

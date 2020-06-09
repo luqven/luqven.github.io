@@ -5,6 +5,10 @@ import { PageProps, Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import WorkExperience from "../components/experience"
+import FaIcon from "../components/icons/faIcon"
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
 
 type Data = {
   site: {
@@ -31,6 +35,24 @@ const HomePage = ({ data, location }: PageProps<Data>) => {
                 __html: aboutHtml,
               }}
             />
+          <div className="social-icons" style={{display: 'flex', flexDirection: 'row'}}>
+            <a href="https://github.com/luqven">
+              <FaIcon icon={faGithub} size="2x" />
+              <p style={{paddingRight: 15}}>GitHub</p>
+            </a>
+            <a href="https://www.linkedin.com/in/luisballjr/">
+              <FaIcon icon={faLinkedinIn} size="2x" />
+              <p style={{paddingRight: 15}}>LinkedIn</p>
+            </a>
+            <a href="https://drive.google.com/file/d/1ENwQMcwDOktyqNsOCMdTMVHKt69JLOs0/view?usp=sharing">
+              <FaIcon icon={faFileAlt} size="2x" />
+              <p style={{paddingRight: 15}}>Resume</p>
+            </a>
+          </div>
+            {/* - [LinkedIn 🔗](https://www.linkedin.com/in/luisballjr/)
+            - [GitHub 🔗](https://github.com/luqven)
+            - [Resume 📎](https://drive.google.com/file/d/1ENwQMcwDOktyqNsOCMdTMVHKt69JLOs0/view?usp=sharing)
+            - [Contact me ✉️](mailto:luishballjr@gmail.com) */}
             <h1> Recent work</h1>
             <WorkExperience />
         </Layout>

@@ -6,6 +6,8 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import LottieAnimation from "../components/lottie-animation"
+import animationContent from "../../content/assets/working-male.json"
 
 type Data = {
   site: {
@@ -38,6 +40,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
+      <LottieAnimation animationContent={animationContent}/>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         if (node.fields.slug === "/intro/" || title === "About me") { return; }
