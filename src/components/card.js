@@ -25,9 +25,11 @@ const Container = styled.div`
 
 const Card = (props) => {
     return (
-        <Container pointer={props.pointer} color={props.color}>
-            {props.children}
-        </Container>
+        <a href={props.linkTo}>
+            <Container pointer={props.pointer} color={props.color}>
+                {props.children}
+            </Container>
+        </a>
     )
 }
 

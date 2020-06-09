@@ -39,36 +39,37 @@ const Layout = ({ location, title, children }) => {
       </h1>
     )
   } else {
-    header = (
-      <h3
+  header = (
+    <h1
+      style={{
+        ...scale(1.5),
+        marginBottom: rhythm(1.5),
+        marginTop: 0,
+      }}
+    >
+      <Link
         style={{
-          fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
+          boxShadow: `none`,
+          color: `inherit`,
+          marginRight: '50px',
         }}
+        to={`/blog-index`}
       >
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-            marginRight: '50px',
-          }}
-          to={`/`}
-        >
-          {title}
-        </Link>
-        <Link
-          style={{
-            boxShadow: `none`,
-            color: `inherit`,
-            fontSize: 'large',
-          }}
-          to={`/blog-index`}
-        >
-          {'blog'}
-        </Link>
-      </h3>
-    )
-  }
+        {"Luis Ball"}
+      </Link>
+      <Link
+        style={{
+          boxShadow: `none`,
+          color: `inherit`,
+          fontSize: 'large',
+        }}
+        to={`/`}
+      >
+        {'Home'}
+      </Link>
+    </h1>
+  )}
+
   return (
     <div
       style={{

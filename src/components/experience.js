@@ -19,15 +19,21 @@ const CardContainer = styled.div`
   flex-direction: row;
 `
 
-const Experience = ({ title, body, imageAlt, imageUrl, cardBackground, left=false}) => {
+const Experience = ({ title, linkTo, body, imageAlt, imageUrl, cardBackground, left=false}) => {
     return (
         <ExperienceBlock>
-            <h3>{title}</h3>
-            <CardContainer>
-                {left ? <Card color={cardBackground}><img alt={imageAlt} src={imageUrl} /></Card> : null}
-                <CardText>{body}</CardText>
-                {!left ? <Card color={cardBackground}><img alt={imageAlt} src={imageUrl} /></Card> : null}
-            </CardContainer>
+            <a href={linkTo}><h3>{title}</h3></a>
+                <CardContainer>
+                    {left ? 
+                    <Card pointer linkTo={linkTo} color={cardBackground}>
+                        <img alt={imageAlt} src={imageUrl} />
+                    </Card> : null }
+                    <CardText>{body}</CardText>
+                    {!left ? 
+                    <Card pointer linkTo={linkTo} color={cardBackground}>
+                        <img alt={imageAlt} src={imageUrl} />
+                    </Card> : null }
+                </CardContainer>
         </ExperienceBlock>
     )
 }
@@ -36,25 +42,28 @@ const WorkExperience  = () => {
     return (
         <>
             <Experience
-                title={"Envizzo Furniture Marketplace"}
-                body={"Built features for platform that offered design solutions for office and residential spaces."}
-                imageAlt={"envizzo-marketplace"}
-                imageUrl={"https://i.imgur.com/ie8ckl1.png"}
+                title="Envizzo Furniture Marketplace"
+                linkTo="https://www.envizzo.com/"
+                body="Built features for platform that offered design solutions for office and residential spaces."
+                imageAlt="envizzo-marketplace"
+                imageUrl="https://i.imgur.com/ie8ckl1.png"
                 left
             />
             <Experience
                 title="Adelaide attention tracker"
+                linkTo="https://adelaidelift.com/"
                 cardBackground="rgba(209,25,29,1)"
                 body="Enhanced advertising tools that evaluate the quality of media by tracking user attention."
                 imageAlt="adelaide-tracker-portal"
                 imageUrl="https://i.imgur.com/Lrc5BaL.png"
             />
             <Experience
-                title={"PanAm Post"}
+                title="PanAm Post"
+                linkTo="http://panampost.com/"
                 cardBackground="rgb(45, 84, 215)"
-                body={"Designed and managed multilingual news outlet that covers life, politics, and economics in the Americas."}
-                imageAlt={"PanAm-post-mobile"}
-                imageUrl={"https://i.imgur.com/s6mleSF.jpg"}
+                body="Managed the engineering at this multilingual news outlet that covers life, politics, and economics in the Americas."
+                imageAlt="PanAm-post-mobile"
+                imageUrl="https://i.imgur.com/s6mleSF.jpg"
                 left
             />
         </>

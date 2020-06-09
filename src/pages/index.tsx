@@ -27,9 +27,7 @@ const HomePage = ({ data, location }: PageProps<Data>) => {
     return (
         <Layout location={location} title={siteTitle}>
             <SEO title="Homepage" />
-            <Bio />
-            <h1> A little about me</h1>
-            <p
+            <div
               dangerouslySetInnerHTML={{
                 __html: aboutHtml,
               }}
