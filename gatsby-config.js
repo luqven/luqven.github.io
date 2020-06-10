@@ -3,7 +3,7 @@ module.exports = {
     title: `Luis Ball`,
     author: {
       name: `Luis H. Ball Jr.`,
-      summary: `Dad, Software Engineer, and Pittsburgh Sports Fan`,
+      summary: `Dad 🍼. Pittsburgh sports fanatic 🏴‍☠️.`,
     },
     description: `Luis H. Ball Jr: Dad, Software Engineer, Pittsburgh Sports Fan`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
