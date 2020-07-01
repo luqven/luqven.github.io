@@ -23,6 +23,11 @@ const ShareTooltip = ({ postTitle, postDescription }) => {
     const body = document.querySelector('body');
     const selected = useSelection();
     const [location, setLocation] = useState({top: '', left: ''})
+    const [pageUrl, setPageUrl] = useState(window.location.href)
+
+    useEffect(() => {
+        setPageUrl(window.location.href)
+    }, [])
 
     // whenever selection changes calculate new top & left offsets
     useEffect(() => {
@@ -56,12 +61,12 @@ const ShareTooltip = ({ postTitle, postDescription }) => {
         <TooltipContainer className={`share-tooltip-container ${selected ? '' : 'hidden'}`}>
             <RotatedSquare location={location}/>
             <LinksContainer location={location}>
-                <a href={createShareLink('twitter', postTitle, postDescription, selected.text)} onClick={(e) => shareLink(e)}>
+                <a href={createShareLink('twitter', postTitle, postDescription, selected.text, pageUrl)} onClick={(e) => shareLink(e)}>
                     <p style={{ marginTop: 10, color: 'white' }}>
                         <span className="emoji" aria-label="twitter" role="img">🐦</span>
                     </p>
                 </a>
-                <a href={createShareLink('email', postTitle, postDescription, selected.text)} onClick={(e) => shareLink(e)}>
+                <a href={createShareLink('email', postTitle, postDescription, selected.text, pageUrl)} onClick={(e) => shareLink(e)}>
                     <p style={{ marginTop: 10, color: 'white' }}>
                         <span className="emoji" aria-label="email" role="img">✉️</span>
                     </p>

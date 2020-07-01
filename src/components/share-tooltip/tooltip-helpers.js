@@ -7,9 +7,6 @@
 */
 
 import styled from 'styled-components'
-
-// constants
-const PAGE_URL = window.location.href;
 // const LIGHT_BLUE = '#6CB4EE'
 // const CYAN = '#00FFFF';
 const DALLAS_BLUE = '#041E42';
@@ -17,11 +14,11 @@ const DALLAS_BLUE_TRANSPARENT = '#041e4254';
 
 // helpers
 // accepts string designating link type, returns link url
-export const createShareLink = (type, title, description, text) => {
+export const createShareLink = (type, title, description, text, pageUrl) => {
     if (!text) { return '' }
 
-    const twitterUrl = `https://twitter.com/intent/tweet?url=${PAGE_URL}&text=${description}:%0"${text}"&via=@luishbjr1`;
-    const emailUrl = `mailto:name@email.com?subject=${title}&body="${text}"%0D%0A...%0D%0A${description}, ${PAGE_URL}`;
+    const twitterUrl = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${description}:%0"${text}"&via=@luishbjr1`;
+    const emailUrl = `mailto:name@email.com?subject=${title}&body="${text}"%0D%0A...%0D%0A${description}, ${pageUrl}`;
     const shareUrl =  type === 'twitter' ? twitterUrl : emailUrl;
 
     return shareUrl;
