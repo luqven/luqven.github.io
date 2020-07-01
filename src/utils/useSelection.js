@@ -9,23 +9,26 @@
  * https://developer.mozilla.org/en-US/docs/Web/API/Window/getSelection
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export const useSelection = () => {
     const [selected, setSelected] = useState()
 
-    document.onselectionchange = () => {
-        let selection;
-        let text = '';
+    useEffect(() => {
+        document.onselectionchange = () => {
+            let selection;
+            let text = '';
 
-        if (document.getSelection) {
-            selection = document.getSelection();
-            text = selection.toString();
-        } else if (document.selection && document.selection.type !== 'Control') {
-            selection = document.selection.createRange();
-            text = selection.text;
-        }
-        setSelected({text, selection})
-    };
+            if (document.getSelection) {
+                selection = document.getSelection();
+                text = selection.toString();
+            } else if (document.selection && document.selection.type !== 'Control') {
+                selection = document.selection.createRange();
+                text = selection.text;
+            }
+            setSelected({ text, selection })
+        };
+    }, [])
+
     return selected;
 }
