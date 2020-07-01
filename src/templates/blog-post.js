@@ -5,6 +5,9 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import ShareTooltip from "../components/share-tooltip/share-tooltip";
+
+import './blog-post.css'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -27,6 +30,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.title}
           </h1>
+          {/* <p>{JSON.stringify(selected)}</p> */}
+          <ShareTooltip postTitle={post.frontmatter.title} postDescription={post.frontmatter.description || post.excerpt}/>
           <p
             style={{
               ...scale(-1 / 5),
