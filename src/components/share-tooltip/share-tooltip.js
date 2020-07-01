@@ -19,11 +19,9 @@ const TOOLTIP_HEIGHT = 35;
 const FACTOR = 1.33;
 
 const ShareTooltip = ({ postTitle, postDescription }) => {
-    const position = document.documentElement.scrollTop || document.body.scrollTop;
-    const body = document.querySelector('body');
     const selected = useSelection();
-    const [location, setLocation] = useState({top: '', left: ''})
-    const [pageUrl, setPageUrl] = useState(window.location.href)
+    const [location, setLocation] = useState({top: '', left: ''});
+    const [pageUrl, setPageUrl] = useState('');
 
     useEffect(() => {
         setPageUrl(window.location.href)
@@ -31,6 +29,9 @@ const ShareTooltip = ({ postTitle, postDescription }) => {
 
     // whenever selection changes calculate new top & left offsets
     useEffect(() => {
+        const position = document.documentElement.scrollTop || document.body.scrollTop;
+        const body = document.querySelector('body');
+
         if (selected && selected.text.length) {
             let range = selected.selection.getRangeAt(0);
             let rect = range.getBoundingClientRect();
@@ -42,7 +43,7 @@ const ShareTooltip = ({ postTitle, postDescription }) => {
             // if no current selection do not update location
             return;
         }
-    }, [body, position, selected])
+    }, [selected])
 
     // if no current selection render nothing
     if (!selected || !selected.text || !selected.text.length || selected.text.length < 1) {
