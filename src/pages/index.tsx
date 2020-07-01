@@ -23,7 +23,6 @@ const HomePage = ({ data, location }: PageProps<Data>) => {
     const nodesArray = {...data.allMarkdownRemark.edges}
     const aboutHtml = nodesArray[0].node.html;
 
-    console.log(aboutHtml)
     return (
         <Layout location={location} title={siteTitle}>
             <SEO title="Homepage" />
