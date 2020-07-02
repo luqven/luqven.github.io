@@ -1,5 +1,5 @@
 ---
-title: How to style selected text and other Selection object tricks
+title: Browser Selection API tricks
 date: "2020-07-01T23:54:37.879Z"
 description: "Part I: creating a useSelection hook that stores the currently selected text"
 ---
@@ -33,22 +33,31 @@ import { useState, useEffect } from 'react';
 export const useSelection = () => {
     const [selected, setSelected] = useState()
 
+    // callback function that updates state with current selection
+    const handleSelectionChange = () => {
+        let selection;
+        let text = '';
+
+        // if browser supports selection API 
+        if (document.getSelection) {
+            selection = document.getSelection();
+            text = selection.toString();
+        } else if (document.selection) {
+            selection = document.selection.createRange();
+            text = selection.text;
+        }
+
+        // update state with selected text and Selection object
+        setSelected({ text, selection })
+    };
+
     useEffect(() => {
-        // whenever the selection changes
-        document.onselectionchange = () => {
-            let selection;
-            let text = '';
-            // get the selection object and text
-            if (document.getSelection) {
-                selection = document.getSelection();
-                text = selection.toString();
-            } else if (document.selection) {
-                selection = document.selection.createRange();
-                text = selection.text;
-            }
-            // update state with the object and the text
-            setSelected({ text, selection })
-        };
+        let isSubscribed = true;
+        // whenever selection on page changes, call handleSelectionChange callback
+        document.onselectionchange = () => isSubscribed && handleSelectionChange();
+
+        // 'unsubscribe' from event listener on component dismount
+        return () => isSubscribed = false;
     }, [])
 
     return selected;
