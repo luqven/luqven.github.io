@@ -17,7 +17,7 @@ const DALLAS_BLUE_TRANSPARENT = '#041e4254';
 export const createShareLink = (type, title, description, text, pageUrl) => {
     if (!text) { return '' }
 
-    const twitterUrl = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${description}:%0"${text}"&via=@luishbjr1`;
+    const twitterUrl = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${description}:%0"${text}"&via=luishbjr1`;
     const emailUrl = `mailto:name@email.com?subject=${title}&body="${text}"%0D%0A...%0D%0A${description}, ${pageUrl}`;
     const shareUrl =  type === 'twitter' ? twitterUrl : emailUrl;
 
