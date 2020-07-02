@@ -1,6 +1,6 @@
 ---
 title: Browser Selection API tricks
-date: "2020-07-01T23:54:37.879Z"
+date: "2020-07-02T16:24:14.376Z"
 description: "Part I: creating a useSelection hook that stores the currently selected text"
 ---
 
