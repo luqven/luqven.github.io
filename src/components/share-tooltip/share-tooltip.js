@@ -22,9 +22,12 @@ const ShareTooltip = ({ postTitle, postDescription }) => {
     const selected = useSelection();
     const [location, setLocation] = useState({top: '', left: ''});
     const [pageUrl, setPageUrl] = useState('');
+    const [shareApi, setShareApi] = useState({supported: false, navigator: null});
 
+    // store the page url
     useEffect(() => {
         setPageUrl(window.location.href)
+        setShareApi({supported: !!navigator.share, navigator: navigator, clicked: false})
     }, [])
 
     // whenever selection changes calculate new top & left offsets
@@ -39,23 +42,26 @@ const ShareTooltip = ({ postTitle, postDescription }) => {
                 top: position + rect.top - TOOLTIP_HEIGHT * FACTOR,
                 left: rect.left + rect.width / 2 - body.getBoundingClientRect().width / 12,
             })
-        } else {
-            // if no current selection do not update location
-            return;
         }
+
     }, [selected])
+
+    // open share window on icon click
+    const shareLink = (e, type) => {
+        e.preventDefault();
+        const url = e.currentTarget.href;
+
+        if (type === 'shareButton') {
+            navigator.share({ url: pageUrl, title: postTitle })
+        } else {
+            const windowFeatures = 'status=no,menubar=no,location=no,scrollbars=no,width=720,height=540';
+            window.open(url, 'Share this post', windowFeatures);
+        }
+    }
 
     // if no current selection render nothing
     if (!selected || !selected.text || !selected.text.length || selected.text.length < 1) {
         return null;
-    }
-
-    // open share window on icon click
-    const shareLink = (e) => {
-        e.preventDefault();
-        const windowFeatures = 'status=no,menubar=no,location=no,scrollbars=no,width=720,height=540';
-        const url = e.currentTarget.href;
-        window.open(url, 'Share this post', windowFeatures);
     }
 
     return (
@@ -72,6 +78,12 @@ const ShareTooltip = ({ postTitle, postDescription }) => {
                         <span className="emoji" aria-label="email" role="img">✉️</span>
                     </p>
                 </a>
+                {shareApi.supported && 
+                <a href={createShareLink('email', postTitle, postDescription, selected.text, pageUrl)} onClick={(e) => shareLink(e, 'shareButton')}>
+                    <p style={{ marginTop: 10, color: 'white' }}>
+                        <span className="emoji" aria-label="email" role="img">🧰</span>
+                    </p>
+                </a>}
             </LinksContainer>
         </TooltipContainer>
     )
