@@ -14,20 +14,27 @@ import { useState, useEffect } from 'react';
 export const useSelection = () => {
     const [selected, setSelected] = useState()
 
-    useEffect(() => {
-        document.onselectionchange = () => {
-            let selection;
-            let text = '';
+    const handleSelectionChange = () => {
+        let selection;
+        let text = '';
 
-            if (document.getSelection) {
-                selection = document.getSelection();
-                text = selection.toString();
-            } else if (document.selection && document.selection.type !== 'Control') {
-                selection = document.selection.createRange();
-                text = selection.text;
-            }
-            setSelected({ text, selection })
-        };
+        if (document.getSelection) {
+            selection = document.getSelection();
+            text = selection.toString();
+        } else if (document.selection && document.selection.type !== 'Control') {
+            selection = document.selection.createRange();
+            text = selection.text;
+        }
+
+        setSelected({ text, selection })
+    };
+
+    useEffect(() => {
+        // use boolean to 'unsubscribe' event listener on dismount
+        let isSubscribed = true;
+        document.onselectionchange = () => isSubscribed && handleSelectionChange();
+
+        return () => isSubscribed = false;
     }, [])
 
     return selected;
