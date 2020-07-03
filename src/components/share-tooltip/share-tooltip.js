@@ -40,7 +40,7 @@ const ShareTooltip = ({ postTitle, postDescription }) => {
             let rect = range.getBoundingClientRect();
             setLocation({
                 top: position + rect.top - TOOLTIP_HEIGHT * FACTOR,
-                left: rect.left + rect.width / 2 - body.getBoundingClientRect().width / 12,
+                left: rect.left + rect.width / 2 - body.getBoundingClientRect().width / 15,
             })
         }
 
