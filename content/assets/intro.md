@@ -14,6 +14,6 @@ Dad 🍼. Pittsburgh sports fanatic 🏴‍☠️.
 
 I love ideating and engineering user experiences. I went into __software development__ for it's combination of design thinking and problem solving.
 
-I'm currently at [Envizzo](https://www.envizzo.com), where I'm responsible for establishing the engineering team's React development strategies and best practices. Previously I was with the team at [Parsec Media](https://www.adelaidelift.com).
+I've previously worked at [Envizzo](https://www.envizzo.com), where I established the engineering team's React development strategies and best practices. Previously I was with the team at [Parsec Media](https://www.adelaidelift.com).
 
 I graduated with dual-degree in Technical Writing & History from [Carnegie Mellon University](https://www.cmu.edu/), after which I worked at an online publisher for 2 years.
