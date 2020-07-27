@@ -1,7 +1,7 @@
 ---
 title: How to make your own Medium-like sharing tooltip
 date: "2020-07-15 21:17:55"
-description: "Browser Selection API tricks Part 3"
+description: "Browser Selection API tricks Part III"
 ---
 > **This post is a WIP**
 
