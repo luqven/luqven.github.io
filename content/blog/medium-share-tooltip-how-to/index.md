@@ -5,7 +5,7 @@ description: "Browser Selection API tricks Part 3"
 ---
 > **This post is a WIP**
 
-> We've previously covered how to [create a useSelection hook that stores the currently selected text]() and [Styling selected text with CSS]() in this series. If you haven't taken a look, I recommend you do so now as we'll be building off of those blog posts.
+> We've previously covered how to [create a useSelection hook that stores the currently selected text](https://luisball.com/styling-document-selection/) and [Styling selected text with CSS](https://luisball.com/styling-document-selection-part-2/) in this series. If you haven't taken a look, I recommend you do so now as we'll be building off of those blog posts.
 
 For part 3 of this **Browser Selection API** series, we're going to build our own [Medium-like](https://dribbble.com/shots/1330226-Medium-Style-Tooltip) sharing tooltip. The idea is to have a simple Twitter, Email, and generic "other" sharing tooltip appear whenever text is selected on the page.
 
