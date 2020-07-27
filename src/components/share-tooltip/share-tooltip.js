@@ -81,7 +81,7 @@ const ShareTooltip = ({ postTitle, postDescription }) => {
                 {shareApi.supported && 
                 <a href={createShareLink('email', postTitle, postDescription, selected.text, pageUrl)} onClick={(e) => shareLink(e, 'shareButton')}>
                     <p style={{ marginTop: 10, color: 'white' }}>
-                        <span className="emoji" aria-label="email" role="img">🧰</span>
+                        <span className="emoji" aria-label="share-api" role="img">🧰</span>
                     </p>
                 </a>}
             </LinksContainer>
