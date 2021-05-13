@@ -8,12 +8,14 @@ description: A little about Luis Ball
 
 Dad 🍼‎‎‏‏‎ ‎ Pittsburgh sports fanatic 🏴‍☠️
 
+@[imgix](https://www.imgix.com/) SDK Engineer
+
 <div style="margin-bottom: 50px"></div>
 
 ## A little about me
 
 I love ideating and engineering user experiences. I went into **software development** for it's combination of design thinking and problem solving.
 
-Ex @[Envizzo](https://www.envizzo.com), @[Parsec Media](https://www.adelaidelift.com)
+> Ex @[Envizzo](https://www.envizzo.com), @[Parsec Media](https://www.adelaidelift.com)
 
 [Carnegie Mellon University](https://www.cmu.edu/) alum.
