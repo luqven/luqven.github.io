@@ -1,5 +1,5 @@
-import React from "react"
 import { Link } from "gatsby"
+import React from "react"
 
 import { rhythm, scale } from "../utils/typography"
 
@@ -20,7 +20,7 @@ const Layout = ({ location, title, children }) => {
           style={{
             boxShadow: `none`,
             color: `inherit`,
-            marginRight: '50px',
+            marginRight: "50px",
           }}
           to={`/`}
         >
@@ -30,45 +30,46 @@ const Layout = ({ location, title, children }) => {
           style={{
             boxShadow: `none`,
             color: `inherit`,
-            fontSize: 'large',
+            fontSize: "large",
           }}
           to={`/blog-index`}
         >
-          {'blog'}
+          {"blog"}
         </Link>
       </h1>
     )
   } else {
-  header = (
-    <h1
-      style={{
-        ...scale(1.5),
-        marginBottom: rhythm(1.5),
-        marginTop: 0,
-      }}
-    >
-      <Link
+    header = (
+      <h1
         style={{
-          boxShadow: `none`,
-          color: `inherit`,
-          marginRight: '50px',
+          ...scale(1.5),
+          marginBottom: rhythm(1.5),
+          marginTop: 0,
         }}
-        to={`/`}
       >
-        {"Luis Ball"}
-      </Link>
-      <Link
-        style={{
-          boxShadow: `none`,
-          color: `inherit`,
-          fontSize: 'large',
-        }}
-        to={`/blog-index`}
-      >
-        {'blog'}
-      </Link>
-    </h1>
-  )}
+        <Link
+          style={{
+            boxShadow: `none`,
+            color: `inherit`,
+            marginRight: "50px",
+          }}
+          to={`/`}
+        >
+          {"Luis Ball"}
+        </Link>
+        <Link
+          style={{
+            boxShadow: `none`,
+            color: `inherit`,
+            fontSize: "large",
+          }}
+          to={`/blog-index`}
+        >
+          {"blog"}
+        </Link>
+      </h1>
+    )
+  }
 
   return (
     <div
@@ -81,11 +82,7 @@ const Layout = ({ location, title, children }) => {
     >
       <header>{header}</header>
       <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <footer></footer>
     </div>
   )
 }

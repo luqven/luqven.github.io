@@ -3,9 +3,9 @@ module.exports = {
     title: `Luis Ball`,
     author: {
       name: `Luis H. Ball Jr.`,
-      summary: `Dad 🍼. Pittsburgh sports fanatic 🏴‍☠️.`,
+      summary: `Software Engineer. Baseball fan. Tolkeinist.`,
     },
-    description: `Luis H. Ball Jr: Dad, Software Engineer, Pittsburgh Sports Fan`,
+    description: `Luis H. Ball Jr: Software Engineer, Baseball fan. Tolkeinist.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
       twitter: `luishbjr1`,
@@ -64,7 +64,7 @@ module.exports = {
         short_name: `Luis Ball`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#4078c0`,
         display: `minimal-ui`,
         icon: `content/assets/site-icon.png`,
       },

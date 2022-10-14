@@ -1,11 +1,10 @@
 // Gatsby supports TypeScript natively!
+import { graphql, PageProps } from "gatsby"
 import React from "react"
-import { PageProps, Link, graphql } from "gatsby"
 
+import Social from "../components/icons/social"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import WorkExperience from "../components/experience"
-import Social from "../components/icons/social"
 
 type Data = {
   site: {
@@ -33,8 +32,6 @@ const HomePage = ({ data, location }: PageProps<Data>) => {
       />
       <br />
       <Social />
-      <h1> Past work</h1>
-      <WorkExperience />
     </Layout>
   )
 }

@@ -6,7 +6,7 @@ description: A little about Luis Ball
 
 <h2 style="font-size: 2rem ;border-bottom: none">Software Engineer</h2>
 
-Dad 🍼‎‎‏‏‎ ‎ Pittsburgh sports fanatic 🏴‍☠️
+Passionate about open source. Baseball fan. Tolkeinist.
 
 @[imgix](https://www.imgix.com/) SDK Engineer
 
@@ -16,6 +16,5 @@ Dad 🍼‎‎‏‏‎ ‎ Pittsburgh sports fanatic 🏴‍☠️
 
 I love ideating and engineering user experiences. I went into **software development** for it's combination of design thinking and problem solving.
 
-> Ex @[Envizzo](https://www.envizzo.com), @[Parsec Media](https://www.adelaidelift.com)
 
 [Carnegie Mellon University](https://www.cmu.edu/) alum.

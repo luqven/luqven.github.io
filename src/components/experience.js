@@ -29,6 +29,14 @@ const WorkExperience = () => {
   return (
     <>
       <Experience
+        title="imgix - Visual Media Platform"
+        linkTo="https://www.imgix.com/"
+        body="Develop and maintain SDKs that help users make amazing things with imgix's image and video APIs"
+        imageAlt="imgix"
+        imageUrl="https://ix-www.imgix.net/press/press-leadership-podcast.jpg"
+        left
+      />
+      <Experience
         title="Envizzo Furniture Marketplace"
         linkTo="https://www.envizzo.com/"
         body="Built features for platform that offered design solutions for office and residential spaces."

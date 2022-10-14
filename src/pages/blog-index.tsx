@@ -1,13 +1,13 @@
 // Gatsby supports TypeScript natively!
+import { graphql, Link, PageProps } from "gatsby"
 import React from "react"
-import { PageProps, Link, graphql } from "gatsby"
 
+import animationContent from "../../content/assets/working-male.json"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
+import LottieAnimation from "../components/lottie-animation"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
-import LottieAnimation from "../components/lottie-animation"
-import animationContent from "../../content/assets/working-male.json"
 
 type Data = {
   site: {
