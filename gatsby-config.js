@@ -8,7 +8,7 @@ module.exports = {
     description: `Luis H. Ball Jr: Software Engineer, Baseball fan. Tolkeinist.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
-      twitter: `luishbjr1`,
+      twitter: `luqven`,
     },
   },
   plugins: [

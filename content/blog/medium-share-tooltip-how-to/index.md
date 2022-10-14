@@ -3,6 +3,7 @@ title: How to make your own Medium-like sharing tooltip
 date: "2020-07-15 21:17:55"
 description: "Browser Selection API tricks Part III"
 ---
+
 > **This post is a WIP**
 
 > We've previously covered how to [create a useSelection hook that stores the currently selected text](https://luisball.com/styling-document-selection/) and [Styling selected text with CSS](https://luisball.com/styling-document-selection-part-2/) in this series. If you haven't taken a look, I recommend you do so now as we'll be building off of those blog posts.
@@ -11,9 +12,10 @@ For part 3 of this **Browser Selection API** series, we're going to build our ow
 
 For an illustration of the finished product, go ahead and select some text in this blog-post.
 
-------
+---
 
 **Table of contents**
+
 - [Creating the tool-tip](#creating-the-tool-tip)
   - [Making a tool-tip container](#making-a-tool-tip-container)
   - [Creating and styling the social-sharing links](#creating-and-styling-the-social-sharing-links)
@@ -28,7 +30,7 @@ For an illustration of the finished product, go ahead and select some text in th
   - [Placing the tooltip on the right spot](#placing-the-tooltip-on-the-right-spot)
 - [Bonus: using the SharingApi to default to OS-default sharing panel](#bonus-using-the-sharingapi-to-default-to-os-default-sharing-panel)
 
-------
+---
 
 ## Creating the tool-tip
 
@@ -44,12 +46,12 @@ Let's go step by step creating each of these.
 
 The tool-tip container can just be a `<div>`. It should initially be hidden, since no text is selected yet, and absolutely positioned, so it can be moved around as the text selection changes. Since it's initially hidden, it's initial position can be anywhere, but we'll set it to be at `top: 0px; left: 0px`.
 
-``` html
+```html
 <div class="tooltip-container"></div>
 ```
 
-``` css
-.hidden{
+```css
+.hidden {
   display: none;
 }
 .tooltip-container {
@@ -65,64 +67,66 @@ And that's it! Now remember that this `tooltip-container` doesn't have any styli
 
 For our purposes, we want social sharing links to Twitter 🐦, Email ✉️, and optionally a [Web Share API native browser sharing mechanism](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share) 🧰. We can add this to our tool-tip container, `<div class="tooltip-container"></div>`, as a `<div class="links-container">` with a handful of `<a href>` links.
 
-  ``` html 
-  <div class="links-container">
-    <a href='https://twitter.com/intent/tweet?url=${pageUrl}&text=${description}:"${text}"&via=luishbjr1'>
-        <p>
-            <span className="emoji" aria-label="twitter" role="img">🐦</span>
-        </p>
-    </a>
-    ...
-  </div>
-  ```
+```html
+<div class="links-container">
+  <a
+    href='https://twitter.com/intent/tweet?url=${pageUrl}&text=${description}:"${text}"&via=luqven'
+  >
+    <p>
+      <span className="emoji" aria-label="twitter" role="img">🐦</span>
+    </p>
+  </a>
+  ...
+</div>
+```
 
 For out next step, we want our social-sharing links to look something like the Medium tool-tip. So we'll give them a dark background color and box-shadow, and `flex` them all in a row. The position of the links is `relative` since it's inside out absolutely positioned `tooltip-container`.
 
-  ``` css
-  .links-container {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 120px;
-    height: 35px;
-    background-color: #041E42;
-    box-shadow: -1px 1px 4px 1px #041e4254;
-    border-radius: 4px;
-    padding-left: 5px;
-    padding-right: 5px;
+```css
+.links-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 120px;
+  height: 35px;
+  background-color: #041e42;
+  box-shadow: -1px 1px 4px 1px #041e4254;
+  border-radius: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 ```
 
 ### Adding an indicator like an arrow or carrot
 
-This will come down to stylistic preference for some. But, it's a well-enough established practice that I'm recommending we go ahead and use it. 
+This will come down to stylistic preference for some. But, it's a well-enough established practice that I'm recommending we go ahead and use it.
 
 Adding this contextual-queue entails placing a rotated box bellow our `links-container` that acts as an arrow to the selected text. It's absolutely positioned as well so that it can move about the page freely, alongside the `links-container`. We'll control it's `top` and `left` position using using JS as well later on.
 
-``` html
+```html
 <div class="rotated-square"></div>
 ```
 
-``` css
+```css
 .rotated-square {
-    background: #041E42;
-    transform: rotate(45deg);
-    width: 25px;
-    height: 25px;
-    position: absolute;
+  background: #041e42;
+  transform: rotate(45deg);
+  width: 25px;
+  height: 25px;
+  position: absolute;
 }
 ```
 
 ## Customizing the social-sharing behavior
 
-Typically, every social network has it's own url-path or API for sharing content outside its network. For Twitter and Email, however, it's quite simple. 
+Typically, every social network has it's own url-path or API for sharing content outside its network. For Twitter and Email, however, it's quite simple.
 
 ### Creating a Twitter sharing url
 
-For twitter, all we need to do is modify a url with specific query parameters. Namely, we need the `url`, `text`, and `via` parameters. A query that shares a tweet linking to this site, for example, might look like this: 
-<a href='https://twitter.com/intent/tweet?url=https://www.luisball.com&text=Luis Ball: software engineer&via=luishbjr1'>https://twitter.com/intent/tweet?url=https://www.luisball.com&text=Luis Ball: software engineer&via=luishbjr1</a>
+For twitter, all we need to do is modify a url with specific query parameters. Namely, we need the `url`, `text`, and `via` parameters. A query that shares a tweet linking to this site, for example, might look like this:
+<a href='https://twitter.com/intent/tweet?url=https://www.luisball.com&text=Luis Ball: software engineer&via=luqven'>https://twitter.com/intent/tweet?url=https://www.luisball.com&text=Luis Ball: software engineer&via=luqven</a>
 
 ### Creating a Email sharing url
 
@@ -132,11 +136,11 @@ To share the selection via email it's even easier. We just need to add a `mailto
 
 ## Using the Selection object to add the selected text to the url
 
-We want people to share the selection they've just made as well as the url of the page. This is where knowing how to use the `Selection` object come into play. In React, we can even make use of a custom `useSelection()` [hook]() that does a lot of the heavy lifting for us. 
+We want people to share the selection they've just made as well as the url of the page. This is where knowing how to use the `Selection` object come into play. In React, we can even make use of a custom `useSelection()` [hook]() that does a lot of the heavy lifting for us.
 
 Essentially, we want to end up with an object, `selected = { text, selection }`, where `text` is a string of the selected text and `selection` is the `Selection` object itself. For example:
 
-``` js
+```js
 {
   "text": "where text is a string of the selected text",
   "selection": {
@@ -164,47 +168,71 @@ And using the `useSelection()` hook, the object should update every time the sel
 
 To make this simpler, we'll use a JS helper function that formats our sharing url depending on the `type` of sharing, i.e. `"twitter"` vs `"email"`. We'll also give it the `text` that was selected and the `pageUrl` as arguments. Optionally, we can pass in `title` and `description` parameters as well, which for this site are generated by GraphQL queries and stored on a per-blog-post-level.
 
-``` javascript
+```javascript
 // accepts string designating link type, returns link url
-export const createShareLink = (type, title="", description="", text, pageUrl) => {
-    if (!text) { return '' }
+export const createShareLink = (
+  type,
+  title = "",
+  description = "",
+  text,
+  pageUrl
+) => {
+  if (!text) {
+    return ""
+  }
 
-    const twitterUrl = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${description}:"${text}"&via=luishbjr1`;
-    const emailUrl = `mailto:name@email.com?subject=${title}&body="${text}"%0D%0A...%0D%0A${description}, ${pageUrl}`;
-    const shareUrl =  type === 'twitter' ? twitterUrl : emailUrl;
+  const twitterUrl = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${description}:"${text}"&via=luqven`
+  const emailUrl = `mailto:name@email.com?subject=${title}&body="${text}"%0D%0A...%0D%0A${description}, ${pageUrl}`
+  const shareUrl = type === "twitter" ? twitterUrl : emailUrl
 
-    return shareUrl;
-};
+  return shareUrl
+}
 ```
 
 Now, by setting the helper function as the `href` attribute in our link components, our sharing-url updates every time the selection changes and the component re-renders.
 
-``` jsx
-<a href={createShareLink('email', postTitle, postDescription, selected.text, pageUrl)} onClick={shareLink}>
-    <p style={{ marginTop: 10, color: 'white' }}>
-        <span className="emoji" aria-label="email" role="img">✉️</span>
-    </p>
+```jsx
+<a
+  href={createShareLink(
+    "email",
+    postTitle,
+    postDescription,
+    selected.text,
+    pageUrl
+  )}
+  onClick={shareLink}
+>
+  <p style={{ marginTop: 10, color: "white" }}>
+    <span className="emoji" aria-label="email" role="img">
+      ✉️
+    </span>
+  </p>
 </a>
 ```
 
 ## Showing the tooltip over the selected text
 
-Now that we have a tooltip to show and its sharing links setup, we need to choose when and where to render it. 
+Now that we have a tooltip to show and its sharing links setup, we need to choose when and where to render it.
 
 ### Conditionally rendering the tooltip
 
 The first thing is to hide the tooltip by default, since on first render text has not been selected. We can do this the old fashioned way, by adding and removing a `.hidden` class conditionally that sets or removed the `display: none` attribute on our tooltip. But with react, its easier to simply conditionally render the tooltip altogether. We do that by determining if our `selected` variable, which is using the `useSelected()` hook to store the `Selected` object, is undefined or empty.
 
 ```jsx
-    // if no current selection render nothing
-    if (!selected || !selected.text || !selected.text.length || selected.text.length < 1) {
-        return null;
-    }
+// if no current selection render nothing
+if (
+  !selected ||
+  !selected.text ||
+  !selected.text.length ||
+  selected.text.length < 1
+) {
+  return null
+}
 ```
 
 ### Placing the tooltip on the right spot
 
-Once we've decided to render to tooltip, we have to make sure it's located by the selected text. To do this, we need to: 
+Once we've decided to render to tooltip, we have to make sure it's located by the selected text. To do this, we need to:
 
 1. store some information about where the selection is on the page.
 2. calculate new top & left offsets whenever selection changes
@@ -258,7 +286,7 @@ useEffect(() => {
 ...
 <LinksContainer>
 ...
-{shareApi.supported && 
+{shareApi.supported &&
 <a href={createShareLink('email', postTitle, postDescription, selected.text, pageUrl)} onClick={(e) => shareLink(e, 'shareButton')}>
     <p style={{ marginTop: 10, color: 'white' }}>
         <span className="emoji" aria-label="share-api" role="img">🧰</span>
